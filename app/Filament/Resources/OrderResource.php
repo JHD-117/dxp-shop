@@ -197,7 +197,8 @@ class OrderResource extends Resource
                         'canceled' => 'Canceled'
                     ]))
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->rules(['required']),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
