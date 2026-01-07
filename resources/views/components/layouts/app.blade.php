@@ -11,10 +11,20 @@
 </head>
 
 <body class="bg-slate-200 dark:bg-black">
+    @livewire('partials.navbar')
     <main>
         {{ $slot }}
     </main>
     @livewireScripts
+    {{-- <script>
+        if (
+            localStorage.theme === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        }
+    </script> --}}
+    @livewire('partials.footer')
 </body>
 
 </html>
