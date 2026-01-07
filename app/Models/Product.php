@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\Brand;
 use App\Models\OrderItem;
+use App\Models\Reference;
+
 
 class Product extends Model
 {
