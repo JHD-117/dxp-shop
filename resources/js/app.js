@@ -1,5 +1,8 @@
 import './bootstrap';
 import 'preline';
+document.addEventListener('livewire:navigated', () => { 
+    window.HSStaticMethods.autoInit();
+})
 
 // Theme toggle - DELETE
 // const themeToggleBtn = document.getElementById('theme-toggle');
