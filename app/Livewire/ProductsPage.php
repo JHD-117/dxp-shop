@@ -25,7 +25,10 @@ class ProductsPage extends Component
     public $featured, $on_sale;
     
     #[Url]
-    public $price_range = 500000; // Valor inicial en COP
+    public $price_range = 500000; 
+
+    #[Url]
+    public $sort = 'latest'; 
     
     public function render()
     {
@@ -45,7 +48,13 @@ class ProductsPage extends Component
         if($this->price_range){
             $productQuery->whereBetween('price', [0, $this->price_range]);
         }
-        
+        if($this->sort == 'latest'){
+            $productQuery->latest();
+        }
+        if($this->sort == 'price'){
+            $productQuery->orderBy('price');
+        }
+
         return view('livewire.products-page', [
             'products' => $productQuery->paginate(6),
             'brands' => Brand::where('is_active', 1)->get(['id', 'name', 'slug']),

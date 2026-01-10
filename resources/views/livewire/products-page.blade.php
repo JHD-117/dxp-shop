@@ -77,10 +77,10 @@
                     <div class="mb-4 px-3">
                         <div class="hidden items-center justify-between bg-gray-100 px-3 py-2 dark:bg-gray-900 md:flex">
                             <div class="flex items-center justify-between">
-                                <select name="" id=""
+                                <select wire:model.live="sort"
                                     class="block w-40 cursor-pointer bg-gray-100 text-base dark:bg-gray-900 dark:text-gray-400">
-                                    <option value="">Sort by latest</option>
-                                    <option value="">Sort by Price</option>
+                                    <option value="latest">Sort by latest</option>
+                                    <option value="price">Sort by Price</option>
                                 </select>
                             </div>
                         </div>
