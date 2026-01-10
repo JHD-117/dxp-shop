@@ -2,30 +2,19 @@
     <section class="font-poppins overflow-hidden bg-white py-11 dark:bg-gray-800">
         <div class="mx-auto max-w-6xl px-4 py-4 md:px-6 lg:py-8">
             <div class="-mx-4 flex flex-wrap">
-                <div class="mb-8 w-full md:mb-0 md:w-1/2" x-data="{ mainImage: 'https://m.media-amazon.com/images/I/71f5Eu5lJSL._SX679_.jpg' }">
+                <div class="mb-8 w-full md:mb-0 md:w-1/2" x-data="{ mainImage: '{{ url('storage', $product->images[0]) }}' }">
                     <div class="sticky top-0 z-50 overflow-hidden">
                         <div class="relative mb-6 lg:mb-10 lg:h-2/4">
                             <img x-bind:src="mainImage" alt="" class="w-full object-cover lg:h-full">
                         </div>
+
                         <div class="hidden flex-wrap md:flex">
-                            <div class="w-1/2 p-2 sm:w-1/4"
-                                x-on:click="mainImage='https://m.media-amazon.com/images/I/71f5Eu5lJSL._SX679_.jpg'">
-                                <img src="https://m.media-amazon.com/images/I/71f5Eu5lJSL._SX679_.jpg" alt=""
-                                    class="w-full cursor-pointer object-cover hover:border hover:border-blue-500 lg:h-20">
-                            </div>
-
-                            <div class="w-1/2 p-2 sm:w-1/4"
-                                x-on:click="mainImage='https://m.media-amazon.com/images/I/61XPhYGQOQL._SX679_.jpg'">
-                                <img src="https://m.media-amazon.com/images/I/61XPhYGQOQL._SX679_.jpg" alt=""
-                                    class="w-full cursor-pointer object-cover hover:border hover:border-blue-500 lg:h-20">
-                            </div>
-
-                            <div class="w-1/2 p-2 sm:w-1/4"
-                                x-on:click="mainImage='https://m.media-amazon.com/images/I/81v5JNjZ4-L._SX679_.jpg'">
-                                <img src="https://m.media-amazon.com/images/I/81v5JNjZ4-L._SX679_.jpg" alt=""
-                                    class="w-full cursor-pointer object-cover hover:border hover:border-blue-500 lg:h-20">
-                            </div>
-
+                            @foreach ($product->images as $image)
+                                <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='{{ url('storage', $image) }}'">
+                                    <img src="{{ url('storage', $image) }}" alt="{{ $product->name }}"
+                                        class="w-full cursor-pointer object-cover hover:border hover:border-blue-500 lg:h-20">
+                                </div>
+                            @endforeach
                         </div>
                         <div class="mt-6 border-t border-gray-300 px-6 pb-6 dark:border-gray-400">
                             <div class="mt-6 flex flex-wrap items-center">
@@ -47,18 +36,14 @@
                     <div class="lg:pl-20">
                         <div class="mb-8">
                             <h2 class="mb-6 max-w-xl text-2xl font-bold dark:text-gray-400 md:text-4xl">
-                                Macbook Pro M130c90</h2>
+                                {{ $product->name }}</h2>
                             <p class="mb-6 inline-block text-4xl font-bold text-gray-700 dark:text-gray-400">
-                                <span>$1500.99</span>
-                                <span
-                                    class="text-base font-normal text-gray-500 line-through dark:text-gray-400">$1800.99</span>
+                                <span>{{ Number::currency($product->price, 'USD') }}</span>
+                                {{-- <span
+                                    class="text-base font-normal text-gray-500 line-through dark:text-gray-400">$1800.99</span> --}}
                             </p>
                             <p class="max-w-md text-gray-700 dark:text-gray-400">
-                                Lorem ispum dor amet Lorem ispum dor amet Lorem ispum dor amet Lorem ispum dor amet
-                                Lorem ispum dor amet Lorem ispum dor amet Lorem ispum dor amet Lorem ispum dor amet
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta eligendi esse
-                                laboriosam ex hic magni inventore dolores numquam, veniam totam ratione iusto explicabo
-                                accusamus, sit alias, architecto voluptate officiis quaerat?
+                                {{ $product->description }}
                             </p>
                         </div>
                         <div class="mb-8 w-32">
