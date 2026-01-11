@@ -50,23 +50,23 @@
                             <label for=""
                                 class="w-full border-b border-blue-300 pb-1 text-xl font-semibold text-gray-700 dark:border-gray-600 dark:text-gray-400">Quantity</label>
                             <div class="relative mt-6 flex h-10 w-full flex-row rounded-lg bg-transparent">
-                                <button
+                                <button wire:click="decrementQty"
                                     class="h-full w-20 cursor-pointer rounded-l bg-gray-300 text-gray-600 outline-none hover:bg-gray-400 hover:text-gray-700 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-700">
                                     <span class="m-auto text-2xl font-thin">-</span>
                                 </button>
-                                <input type="number" readonly
+                                <input type="number" readonly wire:model="quantity"
                                     class="text-md flex w-full items-center bg-gray-300 text-center font-semibold text-gray-700 placeholder-gray-700 outline-none hover:text-black focus:outline-none dark:bg-gray-900 dark:text-gray-400 dark:placeholder-gray-400"
                                     placeholder="1">
-                                <button
+                                <button wire:click="incrementQty"
                                     class="h-full w-20 cursor-pointer rounded-r bg-gray-300 text-gray-600 outline-none hover:bg-gray-400 hover:text-gray-700 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-700">
                                     <span class="m-auto text-2xl font-thin">+</span>
                                 </button>
                             </div>
                         </div>
                         <div class="flex flex-wrap items-center gap-4">
-                            <button
+                            <button wire:click="addToCart({{ $product->id }})"
                                 class="w-full rounded-md bg-blue-500 p-4 text-gray-50 hover:bg-blue-600 dark:bg-blue-500 dark:text-gray-200 dark:hover:bg-blue-700 lg:w-2/5">
-                                Add to cart</button>
+                                <span wire:loading.remove>Add to cart</span><span wire:loading>Adding...</span>
                         </div>
                     </div>
                 </div>
