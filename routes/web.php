@@ -19,14 +19,14 @@ use App\Livewire\Auth\CancelPage;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', HomePage::class);
-Route::get('/categories', CategoriesPage::class);
-Route::get('/products', ProductsPage::class);
-Route::get('/cart', CartPage::class);
-Route::get('/products/{slug}', ProductDetailPage::class);
+Route::get('/', HomePage::class)->name('home');
+Route::get('/categories', CategoriesPage::class)->name('categories');
+Route::get('/products', ProductsPage::class)->name('products');
+Route::get('/cart', CartPage::class)->name('cart');
+Route::get('/products/{slug}', ProductDetailPage::class)->name('products.detail');
 
 Route::middleware('guest')->group(function () {
-    Route::get('/login', LoginPage::class);
+    Route::get('/login', LoginPage::class)->name('login');
     Route::get('/register', RegisterPage::class);
     Route::get('/forgot', ForgotPasswordPage::class);
     Route::get('/reset', ResetPasswordPage::class);
