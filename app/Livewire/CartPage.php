@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Helpers\CartMangement;
+use App\Livewire\Partials\Navbar;
 
 #[Title('Cart - Ecommerce')]
 class CartPage extends Component
