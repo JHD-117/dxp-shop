@@ -7,7 +7,7 @@
                     <h1
                         class="block text-3xl font-bold text-gray-800 dark:text-white sm:text-4xl lg:text-6xl lg:leading-tight">
                         Start your journey with <span class="text-blue-600">Ecommece</span></h1>
-                    <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">Purchase wide varities of electronics
+                    <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">Purchase wide varitiess of electronicss
                         products
                         like Smartphones, Laptops, Smartwatches, Television and many more.</p>
 
