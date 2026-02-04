@@ -20,6 +20,11 @@
 
                         <!-- Form -->
                         <form wire:submit="save">
+                            @if (session('error'))
+                                <div class="mb-4 rounded-lg bg-red-500 p-4 text-sm text-white" role="alert">
+                                    {{ session('error') }}
+                                </div>q
+                            @endif
                             <div class="grid gap-y-4">
                                 <!-- Form Group -->
                                 <div>

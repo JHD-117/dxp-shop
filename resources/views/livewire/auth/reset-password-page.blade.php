@@ -11,26 +11,37 @@
 
                         <div class="mt-5">
                             <!-- Form -->
-                            <form>
+                            <form wire:submit="save">
+                                @if (session('error'))
+                                    <div class="mb-4 rounded-lg bg-red-500 p-4 text-sm text-white" role="alert">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
                                 <div class="grid gap-y-4">
                                     <!-- Form Group -->
                                     <div>
-                                        <label for="password" class="mb-2 block text-sm dark:text-white">Password</label>
+                                        <label for="password"
+                                            class="mb-2 block text-sm dark:text-white">Password</label>
                                         <div class="relative">
-                                            <input type="password" id="password" name="password"
+                                            <input type="password" id="password" wire:model="password"
                                                 class="block w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600"
-                                                required aria-describedby="email-error">
-                                            <div
-                                                class="pointer-events-none absolute inset-y-0 end-0 flex hidden items-center pe-3">
-                                                <svg class="h-5 w-5 text-red-500" width="16" height="16"
-                                                    fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                                </svg>
-                                            </div>
+                                                aria-describedby="email-error">
+                                            @error('password')
+                                                <div
+                                                    class="pointer-events-none absolute inset-y-0 end-0 flex items-center pe-3">
+                                                    <svg class="h-5 w-5 text-red-500" width="16" height="16"
+                                                        fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                                        <path
+                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                                    </svg>
+                                                </div>
+                                            @enderror
                                         </div>
-                                        <p class="mt-2 hidden text-red-600" id="password-error">Password error message
-                                        </p>
+                                        @error('password')
+                                            <p class="mt-2 hidden text-red-600" id="password-error">{{ $message }}
+                                            </p>
+                                        @enderror
+
                                     </div>
                                     <!-- End Form Group -->
 
@@ -39,22 +50,27 @@
                                             class="mb-2 block text-sm dark:text-white">Confirm Password</label>
                                         <div class="relative">
                                             <input type="password" id="password_confirmation"
-                                                name="password_confirmation"
+                                                wire:model="password_confirmation"
                                                 class="block w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600"
-                                                required aria-describedby="email-error">
+                                                aria-describedby="email-error">
+                                            @error('password_confirmation')
+                                                <div class="pointer-events-none inset-y-0 end-0 flex items-center pe-3">
+                                                    <svg class="h-5 w-5 text-red-500" width="16" height="16"
+                                                        fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                                        <path
+                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                                    </svg>
+                                                </div>
+                                            @enderror
 
-                                            <div
-                                                class="pointer-events-none inset-y-0 end-0 flex hidden items-center pe-3">
-                                                <svg class="h-5 w-5 text-red-500" width="16" height="16"
-                                                    fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                                </svg>
-                                            </div>
 
                                         </div>
-                                        <p class="mt-2 text-xs text-red-600" id="password_confirmation-error">Confirm
-                                            Password Error</p>
+
+                                        @error('password_confirmation')
+                                            <p class="mt-2 text-xs text-red-600" id="password_confirmation-error">
+                                                {{ $message }}</p>
+                                        @enderror
+
                                     </div>
 
                                     <button type="submit"
