@@ -3,7 +3,7 @@
         <h1 class="mb-4 text-2xl font-bold text-gray-800 dark:text-white">
             Checkout
         </h1>
-        <form wire:submit.prevent="placeOrder">
+        <form wire:submit="placeOrder">
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-12 md:col-span-12 lg:col-span-8">
                     <!-- Card -->
@@ -19,18 +19,28 @@
                                         First Name
                                     </label>
                                     <input wire:model="first_name"
-                                        class="w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
+                                        class="@error('first_name') border-red-500 @enderror w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
                                         id="first_name" type="text">
                                     </input>
+                                    @error('first_name')
+                                        <span class="text-sm text-red-500">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div>
                                     <label class="mb-1 block text-gray-700 dark:text-white" for="last_name">
                                         Last Name
                                     </label>
                                     <input wire:model="last_name"
-                                        class="w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
+                                        class="@error('last_name') border-red-500 @enderror w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
                                         id="last_name" type="text">
                                     </input>
+                                    @error('last_name')
+                                        <span class="text-sm text-red-500">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="mt-4">
@@ -38,27 +48,42 @@
                                     Phone
                                 </label>
                                 <input wire:model="phone"
-                                    class="w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
+                                    class="@error('phone') border-red-500 @enderror w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
                                     id="phone" type="text">
                                 </input>
+                                @error('phone')
+                                    <span class="text-sm text-red-500">
+                                        {{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                             <div class="mt-4">
                                 <label class="mb-1 block text-gray-700 dark:text-white" for="address">
                                     Address
                                 </label>
                                 <input wire:model="street_address"
-                                    class="w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
+                                    class="@error('street_address') border-red-500 @enderror w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
                                     id="address" type="text">
                                 </input>
+                                @error('street_address')
+                                    <span class="text-sm text-red-500">
+                                        {{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                             <div class="mt-4">
                                 <label class="mb-1 block text-gray-700 dark:text-white" for="city">
                                     City
                                 </label>
                                 <input wire:model="city"
-                                    class="w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
+                                    class="@error('city') border-red-500 @enderror w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
                                     id="city" type="text">
                                 </input>
+                                @error('city')
+                                    <span class="text-sm text-red-500">
+                                        {{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                             <div class="mt-4 grid grid-cols-2 gap-4">
                                 <div>
@@ -66,18 +91,28 @@
                                         State
                                     </label>
                                     <input wire:model="state"
-                                        class="w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
+                                        class="@error('state') border-red-500 @enderror w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
                                         id="state" type="text">
                                     </input>
+                                    @error('state')
+                                        <span class="text-sm text-red-500">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div>
                                     <label class="mb-1 block text-gray-700 dark:text-white" for="zip">
                                         ZIP Code
                                     </label>
                                     <input wire:model="zip_code"
-                                        class="w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
+                                        class="@error('zip_code') border-red-500 @enderror w-full rounded-lg border px-3 py-2 dark:border-none dark:bg-gray-700 dark:text-white"
                                         id="zip" type="text">
                                     </input>
+                                    @error('zip_code')
+                                        <span class="text-sm text-red-500">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -125,6 +160,11 @@
                                 </input>
                             </li>
                         </ul>
+                        @error('payment_method')
+                            <span class="text-sm text-red-500">
+                                {{ $message }}
+                            </span>
+                        @enderror
                     </div>
                     <!-- End Card -->
                 </div>
