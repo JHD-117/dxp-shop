@@ -19,8 +19,8 @@ class SuccessPage extends Component
         $latest_order = Order::with('address')->where('user_id', auth()->id())->latest()->first();
 
         if ($this->session_id){
-            Stripe::setApiKey(env('STRIPE_SECRET'));
-            // Stripe::setApiKey(env('STRIPE_KEY'));
+            // Stripe::setApiKey(env('STRIPE_SECRET'));
+            Stripe::setApiKey(env('STRIPE_KEY'));
             $session_info = Session::retrieve($this->session_id);
 
              if ($session_info->payment_status != 'paid') {

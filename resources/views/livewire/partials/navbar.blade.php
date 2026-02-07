@@ -116,7 +116,7 @@
                                 <div
                                     class="hs-dropdown-menu absolute right-0 z-10 mt-2 hidden min-w-[200px] rounded-lg bg-white p-2 shadow-lg transition-all duration-200 before:absolute before:-top-2 before:right-4 before:h-4 before:w-4 before:rotate-45 before:bg-white dark:bg-gray-800 dark:shadow-gray-900">
                                     <a class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
-                                        href="#">
+                                        wire:navigate href="/my-orders">
                                         My Orders
                                     </a>
                                     <a class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
