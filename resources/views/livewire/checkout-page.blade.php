@@ -210,7 +210,8 @@
                     </div>
                     <button type="submit"
                         class="mt-4 w-full rounded-lg bg-green-500 p-3 text-lg text-white hover:bg-green-600">
-                        Place Order
+                        <span wire:loading.remove wire:target="placeOrder">Place Order</span>
+                        <span wire:loading wire:target="placeOrder">Processing...</span>
                     </button>
                     <div class="mt-4 rounded-xl bg-white p-4 shadow dark:bg-slate-900 sm:p-7">
                         <div class="mb-2 text-xl font-bold text-gray-700 underline dark:text-white">
