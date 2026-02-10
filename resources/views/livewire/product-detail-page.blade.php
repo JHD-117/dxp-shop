@@ -3,7 +3,8 @@
         <div class="mx-auto max-w-6xl px-4 py-4 md:px-6 lg:py-8">
             <div class="-mx-4 flex flex-wrap">
                 <div class="mb-8 w-full md:mb-0 md:w-1/2" x-data="{ mainImage: '{{ url('storage', $product->images[0]) }}' }">
-                    <div class="sticky top-0 z-50 overflow-hidden">
+                    <!-- Eliminé la clase sticky top-0 que estaba causando el problema -->
+                    <div class="overflow-hidden">
                         <div class="relative mb-6 lg:mb-10 lg:h-2/4">
                             <img x-bind:src="mainImage" alt="" class="w-full object-cover lg:h-full">
                         </div>
@@ -69,6 +70,7 @@
                                 <span wire:loading.remove wire:target="addToCart({{ $product->id }})">Add to
                                     cart</span><span wire:loading
                                     wire:target="addToCart({{ $product->id }})">Adding...</span>
+                            </button>
                         </div>
                     </div>
                 </div>
