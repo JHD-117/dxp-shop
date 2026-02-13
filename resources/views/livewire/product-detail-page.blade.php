@@ -69,7 +69,7 @@
                                 class="w-full rounded-md bg-blue-500 p-4 text-gray-50 hover:bg-blue-600 dark:bg-blue-500 dark:text-gray-200 dark:hover:bg-blue-700 lg:w-2/5">
                                 <span wire:loading.remove wire:target="addToCart({{ $product->id }})">Add to
                                     cart</span><span wire:loading
-                                    wire:target="addToCart({{ $product->id }})">Adding...</span>
+                                    wire:target="addToCart({{ $product->id }})">Agregando...</span>
                             </button>
                         </div>
                     </div>
