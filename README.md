@@ -17,6 +17,12 @@
 
 ### Configurar la base de datos en el archivo .env
 
+1. Sqlite
+
+    DB_CONNECTION=sqlite
+
+2. Msyql
+
     DB_CONNECTION=mysql
     DB_HOST=localhost
     DB_PORT=3306
@@ -36,7 +42,7 @@
 2. Inicializar la base de datos
 
 
-        php artisan migrate --force --seeder=InitialSeeder 
+        php artisan migrate
 
 
 ### Ambiente de desarrollo
@@ -50,7 +56,21 @@
 
 2. Inicializar la base de datos
 
-        php artisan migrate:fresh --force --seeder=DemoSeeder
+        php artisan migrate:fresh --force 
+
+
+### Rol administrador filament
+
+1. ejecutar el siguiente comando para crear un usuario administrador
+
+        php artisan make:filament-user
+
+2. Ingresar los datos solicitados
+3. Iniciar el servidor de desarrollo
+
+        php artisan serve
+
+4. Acceder a la ruta http://localhost:8000/admin e iniciar sesión con el usuario creado
 
 ### Ambiente de pruebas
 
