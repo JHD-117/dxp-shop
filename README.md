@@ -19,16 +19,18 @@
 
 1. Sqlite
 
-    DB_CONNECTION=sqlite
+        DB_CONNECTION=sqlite
 
-2. Msyql
+2. Mysql
 
-    DB_CONNECTION=mysql
-    DB_HOST=localhost
-    DB_PORT=3306
-    DB_DATABASE=dxp-shop
-    DB_USERNAME=root
-    DB_PASSWORD=
+
+        DB_CONNECTION=mysql
+        DB_HOST=localhost
+        DB_PORT=3306
+        DB_DATABASE=dxp-shop
+        DB_USERNAME=root
+        DB_PASSWORD=
+
 
 ### Ambiente productivo
 
