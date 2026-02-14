@@ -5,7 +5,7 @@
         <div class="relative md:flex md:items-center md:justify-between">
             <div class="flex items-center justify-between">
                 <a class="flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href="/" aria-label="Brand">Ecommerces</a>
+                    href="/" aria-label="Brand">DXP-SHOP</a>
                 <div class="md:hidden">
                     <button type="button"
                         class="hs-collapse-toggle flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-sm font-semibold text-gray-800 hover:bg-gray-100 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
