@@ -28,7 +28,7 @@
                                         </path>
                                     </svg>
                                 </span>
-                                <h2 class="text-lg font-bold text-gray-700 dark:text-gray-400">Free Shipping</h2>
+                                <h2 class="text-lg font-bold text-gray-700 dark:text-gray-400">Free Shippingg</h2>
                             </div>
                         </div>
                     </div>
